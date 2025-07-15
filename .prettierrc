@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindPreserveWhitespace": false,
+  "tailwindPreserveDuplicates": true,
+  "tailwindStylesheet": "./src/styles/index.css",
+  "tailwindConfig": "./tailwind.config.js",
+  "tailwindFunctions": [
+    "clsx",
+    "cn",
+    "twMerge"
+  ],
+  "printWidth": 120,
+  "singleAttributePerLine": true,
+  "bracketSameLine": false,
+  "htmlWhitespaceSensitivity": "css"
+}

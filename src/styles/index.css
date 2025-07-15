@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --color-primary: oklch(54.1% 0.281 293.009);
+  --color-primary-foreground: oklch(0.985 0 0);
+}
+
+@layer components {
+  .content-wrap {
+    @apply w-320 mx-auto;
+  }
+
+  .btn {
+    @apply px-6 py-2.5 text-center text-sm text-nowrap;
+
+    &:hover {
+      @apply bg-primary/80;
+    }
+  }
+
+  .btn-primary {
+    @apply bg-violet-600 text-white;
+  }
+
+  .btn-small {
+    @apply px-4 py-2;
+  }
+
+  .input-wrap {
+    @apply border-1 border-gray-300 bg-white inline-flex pl-4 overflow-hidden transition-all duration-500;
+
+    &:hover {
+      @apply border-primary;
+    }
+
+    >input {
+      @apply outline-0 border-0 text-sm flex-1 px-1 py-3 pr-5;
+    }
+  }
+
+  .small-input {
+    @apply pl-3;
+
+    >input {
+      @apply py-1 pr-3;
+    }
+  }
+}
