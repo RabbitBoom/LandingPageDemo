@@ -4,38 +4,53 @@
   --default-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --color-primary: oklch(54.1% 0.281 293.009);
   --color-primary-foreground: oklch(0.985 0 0);
+  --animate-going: going 1s infinite;
+
+  @keyframes going {
+
+    0%,
+    100% {
+      transform: translateX(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
 }
 
 @layer components {
+  svg {
+    @apply size-6;
+  }
+
   .content-wrap {
     @apply w-320 mx-auto;
   }
 
   .btn {
-    @apply px-6 py-2.5 text-center text-sm text-nowrap;
+    @apply px-6 py-2.5 text-center text-base text-nowrap;
+  }
+
+  .btn-primary {
+    @apply bg-violet-600 text-white;
 
     &:hover {
       @apply bg-primary/80;
     }
   }
 
-  .btn-primary {
-    @apply bg-violet-600 text-white;
-  }
-
   .btn-small {
-    @apply px-4 py-2;
+    @apply px-4 py-1.5 text-sm;
   }
 
   .input-wrap {
-    @apply border-1 border-gray-300 bg-white inline-flex pl-4 overflow-hidden transition-all duration-500;
-
-    &:hover {
-      @apply border-primary;
-    }
+    @apply border-1 border-gray-300 bg-white inline-flex pl-4 overflow-hidden transition-all duration-500 hover:border-primary;
 
     >input {
-      @apply outline-0 border-0 text-sm flex-1 px-1 py-3 pr-5;
+      @apply outline-0 border-0 text-base flex-1 px-1 py-2 pr-5;
     }
   }
 
@@ -43,7 +58,11 @@
     @apply pl-3;
 
     >input {
-      @apply py-1 pr-3;
+      @apply py-1 pr-3 text-sm;
     }
   }
+}
+
+@utility animation-delay-* {
+  animation-delay: --value(integer)ms;
 }
