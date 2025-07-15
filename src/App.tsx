@@ -4,6 +4,7 @@ import Facebook from "./assets/svg/companys/Facebook.svg?react";
 import Figma from "./assets/svg/companys/Figma.svg?react";
 import YouTube from "./assets/svg/companys/YouTube.svg?react";
 import ArrowRight from "./assets/svg/icons/arrow-right.svg?react";
+import ListPic from "./assets/images/7-600x400.png";
 
 export type ListItemTypes = {
   id: number;
@@ -68,10 +69,10 @@ const listData: ListItemTypes[] = [
 const App: React.FC = () => {
   return (
     <>
-      <header className="sticky top-0 left-0 z-10 bg-white/40 shadow-sm backdrop-blur-3xl">
-        <section className="content-wrap flex items-center justify-between py-4">
-          <a className="text-xl font-semibold text-primary">CnRabbit</a>
-          <nav className="flex space-x-6 *:text-sm *:font-semibold *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary">
+      <header className="sticky top-0 left-0 z-10 bg-white/70 shadow-sm backdrop-blur-md">
+        <section className="content-wrap flex items-center justify-between py-5">
+          <a className="text-2xl font-semibold text-primary">CNRabbit</a>
+          <nav className="flex space-x-6 *:font-semibold *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary">
             <a
               href=""
               title="Topics"
@@ -97,22 +98,22 @@ const App: React.FC = () => {
               Advertise
             </a>
           </nav>
-          <div className="flex space-x-4">
+          <div className="flex space-x-6">
             <Input
-              className="small-input rounded-full"
+              className="small-input w-70 rounded-full"
               placeholder="search..."
             />
             <a
               href=""
               title="Sign In"
-              className="btn btn-small px-0"
+              className="btn px-0"
             >
               Sign In
             </a>
             <a
               href=""
               title="Subscribe"
-              className="btn btn-primary btn-small rounded-full text-sm hover:backdrop-brightness-70"
+              className="btn btn-primary rounded-full hover:backdrop-brightness-70"
             >
               Subscribe
             </a>
@@ -126,7 +127,7 @@ const App: React.FC = () => {
             Join 75,000+ creators learning how to grow smarter in under 5 minutes a week.
           </span>
           <Input
-            className="mb-2 w-full max-w-90 rounded-full"
+            className="mb-2 w-full max-w-100 rounded-full"
             placeholder="Enter your email"
             appendNode={
               <button
@@ -143,8 +144,8 @@ const App: React.FC = () => {
       <section className="py-9">
         <section className="content-wrap flex flex-col items-center">
           <div className="text-sm text-gray-500">Read by teams & creators from</div>
-          <div className="flex space-x-5 py-3">
-            <Google className="animate-bounce" />
+          <div className="flex space-x-5 py-4">
+            <Google className="transform-gpu animate-bounce" />
             <Facebook className="animate-bounce animation-delay-100" />
             <Figma className="animate-bounce animation-delay-200" />
             <YouTube className="animate-bounce animation-delay-300" />
@@ -155,7 +156,9 @@ const App: React.FC = () => {
         <section className="content-wrap flex flex-wrap space-x-8">
           <div className="flex-1 overflow-hidden">
             <img
-              src="../src/assets/images/7-600x400.png"
+              src={ListPic}
+              width={600}
+              height={400}
               alt="Featured Story"
             />
           </div>
@@ -233,9 +236,9 @@ const App: React.FC = () => {
                     <img
                       className="aspect-600/300 h-full w-full object-cover transition-all group-hover:scale-110"
                       loading="lazy"
-                      src="../src/assets/images/7-600x400.png"
                       width="600"
                       height="400"
+                      src={ListPic}
                       alt={item.title}
                     />
                   </div>
@@ -264,7 +267,7 @@ const App: React.FC = () => {
         <section className="content-wrap">
           <section className="mb-8 flex space-x-9">
             <section className="flex flex-1 flex-col">
-              <a className="mb-2 text-xl font-semibold text-primary">CnRabbit</a>
+              <a className="mb-2 text-2xl font-semibold text-primary">CNRabbit</a>
               <p className="mb-4 text-sm text-gray-500">
                 Practical strategies to build, grow, and monetize your online business. No fluff. Ever.
               </p>
