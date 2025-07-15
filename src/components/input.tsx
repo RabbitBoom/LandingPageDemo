@@ -1,15 +1,19 @@
-import type { InputHTMLAttributes } from "react";
+import type { InputHTMLAttributes, ReactNode } from "react";
 import { cn } from "../lib/utils";
 
-const Input: React.FC<InputHTMLAttributes<{ append?: React.ReactNode | Element } & HTMLInputElement>> = (props) => {
-  const { type = "text", append, placeholder, className } = props;
+export type InputPropsTypes = {
+  appendNode?: React.ReactNode | Element;
+} & InputHTMLAttributes<HTMLInputElement>;
+
+const Input: React.FC<InputPropsTypes> = (props) => {
+  const { type = "text", appendNode, placeholder, className } = props;
   return (
     <div className={cn(["input-wrap", className])}>
       <input
         type={type}
         placeholder={placeholder}
       />
-      {append}
+      {appendNode as ReactNode}
     </div>
   );
 };

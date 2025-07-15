@@ -61,7 +61,14 @@ const App: React.FC = () => {
           <Input
             className="mb-2 w-100 rounded-full"
             placeholder="Enter your email"
-            append=<button className="btn btn-primary">Subscribe</button>
+            appendNode={
+              <button
+                type="button"
+                className="btn btn-primary"
+              >
+                Subscribe
+              </button>
+            }
           />
           <span className="text-xs font-light text-gray-500">No spam. Unsubscribe anytime.</span>
         </section>
@@ -95,7 +102,14 @@ const App: React.FC = () => {
               <Input
                 className="rounded-full"
                 placeholder="Your email"
-                append=<button className="btn btn-primary">Subscribe</button>
+                appendNode={
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                  >
+                    Subscribe
+                  </button>
+                }
               />
             </section>
             <section className="flex-1">
