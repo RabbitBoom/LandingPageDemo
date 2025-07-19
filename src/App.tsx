@@ -71,7 +71,7 @@ const App: React.FC = () => {
     <>
       <header className="sticky top-0 left-0 z-10 bg-white/70 shadow-sm backdrop-blur-md">
         <section className="content-wrap flex items-center justify-between py-5">
-          <a className="text-2xl font-semibold text-primary">CNRabbit</a>
+          <a href="/" className="text-2xl font-semibold text-primary" title="CNRabbit">CNRabbit</a>
           <nav className="flex space-x-6 *:font-semibold *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary">
             <a
               href=""
