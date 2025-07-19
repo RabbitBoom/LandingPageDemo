@@ -159,6 +159,7 @@ const App: React.FC = () => {
               src={ListPic}
               width={600}
               height={400}
+              fetchPriority="high"
               alt="Featured Story"
             />
           </div>
@@ -267,7 +268,7 @@ const App: React.FC = () => {
         <section className="content-wrap">
           <section className="mb-8 flex space-x-9">
             <section className="flex flex-1 flex-col">
-              <a className="mb-2 text-2xl font-semibold text-primary">CNRabbit</a>
+              <a href="/" className="mb-2 text-2xl font-semibold text-primary" title="CNRabbit">CNRabbit</a>
               <p className="mb-4 text-sm text-gray-500">
                 Practical strategies to build, grow, and monetize your online business. No fluff. Ever.
               </p>
