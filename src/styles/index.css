@@ -27,11 +27,11 @@
   }
 
   .content-wrap {
-    @apply w-320 mx-auto;
+    @apply px-5 xl:w-320 xl:mx-auto;
   }
 
   .btn {
-    @apply px-6 py-2.5 text-center text-base text-nowrap;
+    @apply min-w-fit px-3 sm:px-6 py-1.5 text-center text-base text-nowrap items-center;
   }
 
   .btn-primary {
@@ -47,10 +47,10 @@
   }
 
   .input-wrap {
-    @apply border-1 border-gray-300 bg-white inline-flex pl-4 overflow-hidden transition-all duration-500 hover:border-primary;
+    @apply border-1 h-10.5 border-gray-300 bg-white inline-flex pl-4 overflow-hidden transition-all duration-500 hover:border-primary;
 
     >input {
-      @apply outline-0 border-0 text-base flex-1 px-1 py-2 pr-5;
+      @apply w-full outline-0 border-0 text-base flex-1 px-1 py-2 pr-5;
     }
   }
 
@@ -64,5 +64,5 @@
 }
 
 @utility animation-delay-* {
-  animation-delay: --value(integer)ms;
+  animation-delay: --value(integer,[integer])ms;
 }

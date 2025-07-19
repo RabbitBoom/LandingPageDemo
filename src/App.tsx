@@ -71,8 +71,14 @@ const App: React.FC = () => {
     <>
       <header className="sticky top-0 left-0 z-10 bg-white/70 shadow-sm backdrop-blur-md">
         <section className="content-wrap flex items-center justify-between py-5">
-          <a href="/" className="text-2xl font-semibold text-primary" title="CNRabbit">CNRabbit</a>
-          <nav className="flex space-x-6 *:font-semibold *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary">
+          <a
+            href="/"
+            className="text-2xl font-semibold text-primary"
+            title="CNRabbit"
+          >
+            CNRabbit
+          </a>
+          {/* <nav className="flex space-x-6 *:font-semibold *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary">
             <a
               href=""
               title="Topics"
@@ -97,23 +103,23 @@ const App: React.FC = () => {
             >
               Advertise
             </a>
-          </nav>
-          <div className="flex space-x-6">
+          </nav> */}
+          <div className="ml-5 flex flex-1 justify-end md:space-x-6">
             <Input
-              className="small-input w-70 rounded-full"
+              className="small-input w-full max-w-70 rounded-full"
               placeholder="search..."
             />
             <a
               href=""
               title="Sign In"
-              className="btn px-0"
+              className="btn hidden px-0 md:inline-flex"
             >
               Sign In
             </a>
             <a
               href=""
               title="Subscribe"
-              className="btn btn-primary rounded-full hover:backdrop-brightness-70"
+              className="btn btn-primary hidden rounded-full hover:backdrop-brightness-70 md:inline-flex"
             >
               Subscribe
             </a>
@@ -141,7 +147,7 @@ const App: React.FC = () => {
           <span className="text-xs font-light text-gray-500">No spam. Unsubscribe anytime.</span>
         </section>
       </section>
-      <section className="py-9">
+      <section className="py-4 md:py-9">
         <section className="content-wrap flex flex-col items-center">
           <div className="text-sm text-gray-500">Read by teams & creators from</div>
           <div className="flex space-x-5 py-4">
@@ -152,39 +158,41 @@ const App: React.FC = () => {
           </div>
         </section>
       </section>
-      <section className="py-9">
-        <section className="content-wrap flex flex-wrap space-x-8">
-          <div className="flex-1 overflow-hidden">
-            <img
-              src={ListPic}
-              width={600}
-              height={400}
-              fetchPriority="high"
-              alt="Featured Story"
-            />
-          </div>
-          <div className="group flex flex-1 flex-col overflow-hidden">
-            <div className="mb-2 text-base font-semibold text-primary">FEATURED ARTICLE</div>
-            <h2 className="mb-4 text-3xl font-extrabold transition-colors hover:text-primary/80">
+      <section className="md:py-9">
+        <section className="content-wrap flex flex-col space-y-8 md:flex-row md:space-x-8">
+          <div className="flex flex-1 flex-col space-y-8 sm:flex-row sm:space-x-8 lg:flex-2">
+            <div className="hidden flex-1 overflow-hidden lg:block">
+              <img
+                src={ListPic}
+                width={600}
+                height={400}
+                fetchPriority="high"
+                alt="Featured Story"
+              />
+            </div>
+            <div className="group flex flex-1 flex-col overflow-hidden">
+              <div className="mb-2 text-base font-semibold text-primary">FEATURED ARTICLE</div>
+              <h2 className="mb-4 text-3xl font-extrabold transition-colors hover:text-primary/80">
+                <a
+                  href=""
+                  title="From Zero to $10K/Month as a Solo Creator"
+                >
+                  From Zero to $10K/Month as a Solo Creator
+                </a>
+              </h2>
+              <p className="mb-5 text-gray-500">
+                Discover how Alex transformed his small newsletter into a five-figure income stream using smart content
+                strategies, strong positioning, and the power of partnerships.
+              </p>
               <a
                 href=""
-                title="From Zero to $10K/Month as a Solo Creator"
+                className="flex items-center space-x-2.5 text-primary *:text-primary"
+                title="Read More"
               >
-                From Zero to $10K/Month as a Solo Creator
+                <span>Read More</span>
+                <ArrowRight className="size-4.5 animate-going *:stroke-current" />
               </a>
-            </h2>
-            <p className="mb-5 text-gray-500">
-              Discover how Alex transformed his small newsletter into a five-figure income stream using smart content
-              strategies, strong positioning, and the power of partnerships.
-            </p>
-            <a
-              href=""
-              className="flex items-center space-x-2.5 text-primary *:text-primary"
-              title="Read More"
-            >
-              <span>Read More</span>
-              <ArrowRight className="size-4.5 animate-going *:stroke-current" />
-            </a>
+            </div>
           </div>
           <ul className="flex flex-1 flex-col space-y-5 *:flex *:cursor-default *:space-x-4 *:rounded-md *:border-1 *:border-gray-300 *:bg-white *:p-4 *:drop-shadow-md *:transition-transform *:hover:scale-105 *:hover:border-primary *:hover:drop-shadow-primary/30">
             <li>
@@ -226,7 +234,7 @@ const App: React.FC = () => {
               Practical breakdowns, creator case studies, income ideas & monetization tips.
             </span>
           </div>
-          <div className="grid w-full grid-cols-3 gap-7.5">
+          <div className="grid w-full grid-cols-1 gap-7.5 sm:grid-cols-2 md:grid-cols-3">
             {listData.map((item) => {
               return (
                 <div
@@ -266,9 +274,15 @@ const App: React.FC = () => {
       </section>
       <footer className="bg-gray-50/40 py-10">
         <section className="content-wrap">
-          <section className="mb-8 flex space-x-9">
+          <section className="mb-8 flex flex-col space-y-9 sm:flex-row sm:space-y-0 sm:space-x-9">
             <section className="flex flex-1 flex-col">
-              <a href="/" className="mb-2 text-2xl font-semibold text-primary" title="CNRabbit">CNRabbit</a>
+              <a
+                href="/"
+                className="mb-2 text-2xl font-semibold text-primary"
+                title="CNRabbit"
+              >
+                CNRabbit
+              </a>
               <p className="mb-4 text-sm text-gray-500">
                 Practical strategies to build, grow, and monetize your online business. No fluff. Ever.
               </p>
@@ -285,58 +299,60 @@ const App: React.FC = () => {
                 }
               />
             </section>
-            <section className="flex-1">
-              <h2 className="mb-2.5">Company</h2>
-              <div className="flex flex-col *:my-1 *:text-sm *:text-gray-500 *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary/80">
-                <a
-                  href=""
-                  title="About"
-                >
-                  About
-                </a>
-                <a
-                  href=""
-                  title="Contact"
-                >
-                  Contact
-                </a>
-                <a
-                  href=""
-                  title="Privacy Policy"
-                >
-                  Privacy Policy
-                </a>
-                <a
-                  href=""
-                  title="Terms of Service"
-                >
-                  Terms of Service
-                </a>
-              </div>
-            </section>
-            <section className="flex-1">
-              <h2 className="mb-2.5">Follow</h2>
-              <div className="flex flex-col *:my-1 *:text-sm *:text-gray-500 *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary/80">
-                <a
-                  href=""
-                  title="Twitter/X"
-                >
-                  Twitter/X
-                </a>
-                <a
-                  href=""
-                  title="YouTube"
-                >
-                  YouTube
-                </a>
-                <a
-                  href=""
-                  title="Bluesky"
-                >
-                  Bluesky
-                </a>
-              </div>
-            </section>
+            <div className="flex sm:flex-2">
+              <section className="flex-1">
+                <h2 className="mb-2.5">Company</h2>
+                <div className="flex flex-col *:my-1 *:text-sm *:text-gray-500 *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary/80">
+                  <a
+                    href=""
+                    title="About"
+                  >
+                    About
+                  </a>
+                  <a
+                    href=""
+                    title="Contact"
+                  >
+                    Contact
+                  </a>
+                  <a
+                    href=""
+                    title="Privacy Policy"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    href=""
+                    title="Terms of Service"
+                  >
+                    Terms of Service
+                  </a>
+                </div>
+              </section>
+              <section className="flex-1">
+                <h2 className="mb-2.5">Follow</h2>
+                <div className="flex flex-col *:my-1 *:text-sm *:text-gray-500 *:transition-colors *:transition-discrete *:duration-500 *:hover:text-primary/80">
+                  <a
+                    href=""
+                    title="Twitter/X"
+                  >
+                    Twitter/X
+                  </a>
+                  <a
+                    href=""
+                    title="YouTube"
+                  >
+                    YouTube
+                  </a>
+                  <a
+                    href=""
+                    title="Bluesky"
+                  >
+                    Bluesky
+                  </a>
+                </div>
+              </section>
+            </div>
           </section>
           <div className="text-center text-xs font-light text-gray-500">© 2025 All rights reserved.</div>
         </section>
