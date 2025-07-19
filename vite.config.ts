@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/',
   plugins: [
     svgr(),
     tailwindcss(),
@@ -14,14 +15,10 @@ export default defineConfig({
       algorithm: 'gzip'
     })],
   build: {
-    assetsDir: 'static',
+    assetsDir: 'assets',
     assetsInlineLimit: 4096,
     rollupOptions: {
-      external: ['react'],
       output: {
-        globals: {
-          react: 'React'
-        },
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
             return 'vendor'
