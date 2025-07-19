@@ -27,7 +27,7 @@
   }
 
   .content-wrap {
-    @apply px-5 xl:w-320 xl:mx-auto;
+    @apply px-5 xl:px-0 xl:w-320 xl:mx-auto;
   }
 
   .btn {
@@ -64,5 +64,5 @@
 }
 
 @utility animation-delay-* {
-  animation-delay: --value(integer,[integer])ms;
+  animation-delay: --value(integer, [integer])ms;
 }
